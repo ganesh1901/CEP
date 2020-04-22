@@ -1,0 +1,48 @@
+        -:    0:Source:incomptest.c
+        -:    0:Graph:incomptest.gcno
+        -:    0:Data:incomptest.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:
+        -:    2:
+        -:    3:// The following Code is a demonstration purpose of Priority Inversion During V&V CEP 9/07/12
+        -:    4:// // Most of the code is written intentional to only demonstrate the purpose , don't try to use as it is
+        -:    5:// // Author V&V Team
+        -:    6://
+        -:    7:
+        -:    8:#include <stdio.h>
+        -:    9:
+function testUnit called 1 returned 100% blocks executed 71%
+        1:   10:int testUnit(int a,int b) {
+        -:   11:
+        -:   12:
+        -:   13:
+        1:   14:	if( a == 1 )  {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   15:		printf(" a = 1 \n");
+call    0 returned 100%
+        -:   16:	} else  {
+    #####:   17:		printf(" a != 1 \n");
+call    0 never executed
+        -:   18:	}
+        -:   19:
+        1:   20:	if( b == 1 )  {
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   21:		printf(" b = 1 \n");
+call    0 never executed
+        -:   22:	} else  {
+        1:   23:		printf(" b != 1 \n");
+call    0 returned 100%
+        -:   24:	}
+        -:   25:
+        1:   26:	return(0);
+        -:   27:} 
+        -:   28:
+function main called 1 returned 100% blocks executed 100%
+        1:   29:int main() {
+        -:   30:
+        1:   31:	testUnit(1,2);
+call    0 returned 100%
+        1:   32:}
